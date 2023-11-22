@@ -10,15 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <meta name="view-transition" content="same-origin" />
 </head>
 
 <body>
     <nav class="nav">
         <ul class="nav__list list-reset">
-            <li class="nav__item nav__item--one"><a href="one/" class="nav__link nav__link--one">Page 1</a></li>
-            <li class="nav__item nav__item--two"><a href="two/" class="nav__link nav__link--two">Page 2</a></li>
-            <li class="nav__item nav__item--three"><a href="three/" class="nav__link nav__link--three">Page 3</a></li>
-            <li class="nav__item nav__item--four"><a href="four/" class="nav__link nav__link--four">Page 4</a></li>
+            <li class="nav__item nav__item--one"><a href="one/" class="nav__link nav__link--one" style="view-transition-name: page-one;"><span style="view-transition-name: label-one;">Page 1</span></a></li>
+            <li class="nav__item nav__item--two"><a href="two/" class="nav__link nav__link--two" style="view-transition-name: page-two;"><span style="view-transition-name: label-two;">Page 2</span></a></li>
+            <li class="nav__item nav__item--three"><a href="three/" class="nav__link nav__link--three"style="view-transition-name: page-three;"><span style="view-transition-name: label-three;">Page 3</span></a></li>
+            <li class="nav__item nav__item--four"><a href="four/" class="nav__link nav__link--four" style="view-transition-name: page-four;"><span style="view-transition-name: label-four;">Page 4</span></a></li>
         </ul>
     </nav>
 </body>

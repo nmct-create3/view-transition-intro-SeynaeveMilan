@@ -5,6 +5,37 @@
     --color-ocean: oklch(0.7 0.25 151.84);
 }
 
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+}
+@keyframes fade-out{
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes slide-from-bottom{
+    from{
+        transform: translateY(30px);
+    }
+}
+
+@keyframes slide-to-bottom{
+    to{
+        transform: translateY(30px);
+    }
+}
+
+/* ::view-transition-new(root){
+    animation: 210ms ease-out 90ms both fade-in, 300ms ease-in-out both slide-from-bottom;
+
+}
+
+::view-transition-old(root){
+    animation: 90ms ease-in both fade-out, 300ms ease-in-out both slide-to-bottom;
+} */
 /* reset */
 
 * {
@@ -23,6 +54,9 @@ html {
 
 body {
     margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 svg,
@@ -42,31 +76,111 @@ h1 {
 .list-reset {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 /* components */
 
-.nav__list {}
+.nav__list {
+    --gap: 1.5rem;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(2, 20vw);
+    grid-template-rows: repeat(2, 20vh);
+    
 
-.nav__item {}
+}
 
-.nav__link {}
+.nav__item {
+    display: grid;
+}
 
+.nav__link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: .25rem;
+    display: grid;
+    place-items: center;
+}
+.nav__link--one{
+    background-color: var(--color-pink);
+}
+
+.nav__link--two{
+    background-color: var(--color-purple);
+}
+
+.nav__link--three{
+    background-color: var(--color-yellow);
+}
+
+.nav__link--four{
+    background-color: var(--color-ocean);
+}
 /* give the links a different background color */
 
-.page {}
+
+.page {
+    width: calc(100vw - 10vw);
+    height: calc(100vh - 10vw);
+    color: white;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    border-radius: 3vw;
+}
 
 /* give the pages a different background color */
 
-.page--one {}
+.page--one {
+    background-color: var(--color-pink);
+}
 
-.page--two {}
+.page--two {
+    background-color: var(--color-purple);
+}
 
-.page--three {}
+.page--three {
+    background-color: var(--color-yellow);
+}
 
-.page--four {}
+.page--four {
+    background-color: var(--color-ocean);
+}
 
-.page__back {}
+.page__back {
+    align-self: start;
+    justify-self: end;
+
+}
 
 .page__body,
-.page__back {}
+.page__back {
+    /* grid-row: 1;
+    grid-column: 1; */
+    grid-area: 1 / 1 / auto / auto;
+    /* Same as above */
+}
+
+.page__body{
+    text-align: center;
+}
+
+.page__back{
+    color: inherit;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
+}
